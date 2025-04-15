@@ -1,0 +1,35 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"> 
+    <title>
+      Определенеи жанра
+    </title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <form method="POST">
+        <table>
+          {% csrf_token %}
+          {{ form.as_p }}
+        <span>{{error}} </span>
+        </table>
+        <input type="submit" value="Добавить" name="_add">
+        </form>
+        <h3>Добавленные варинты</h3>        
+        <p>
+        {% for el in table%}
+          <span> {{el.instrument_id}} - {{el.harakter}} - {{el.value_id}} </span>
+          <br>
+        {% endfor %}
+        <form method="POST">
+          {% csrf_token %}
+        <td><input type="submit" value="Проверить" name="_find"></td>
+        {% csrf_token %}
+        <td><input type="submit" value="Очистить" name="_delete"></td>
+        </form>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

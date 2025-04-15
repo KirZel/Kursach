@@ -1,0 +1,21 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"> 
+    <title>
+      Определенеи жанра
+    </title>
+  </head>
+  <body>
+    <main>
+      <div>
+        <h3>Варианты</h3> 
+        {{data}}
+        <p>
+        {% for key, value in data.items%}
+          <span> Жанр:{{key}} - Количество соответствий:{{value}}</span><br>
+        {% endfor %}
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
